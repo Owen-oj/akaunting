@@ -35,7 +35,7 @@ class Modules
         $modules->payment_methods = [];
 
         // Fire the event to get the list of payment methods
-        event(new PaymentMethodShowing($modules));
+        event(new \App\Events\Module\PaymentMethodShowing($modules));
 
         foreach ((array) $modules->payment_methods as $method) {
             if (!isset($method['name']) || !isset($method['code'])) {
@@ -56,9 +56,9 @@ class Modules
         }
 
         if ($contact) {
-            Cache::put($cache_customer, $payment_methods, Date::now()->addHour(6));
+            Cache::put($cache_customer, $payment_methods, Date::now()->addHours(6));
         } else {
-            Cache::put($cache_admin, $payment_methods, Date::now()->addHour(6));
+            Cache::put($cache_admin, $payment_methods, Date::now()->addHours(6));
         }
 
         return ($payment_methods) ? $payment_methods : [];
