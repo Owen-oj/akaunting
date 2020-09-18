@@ -131,4 +131,9 @@ class Employee extends Model
     {
         return 'GHS';
     }
+
+    public function getNameAttribute()
+    {
+        return $this->contact->name;
+    }
 }
