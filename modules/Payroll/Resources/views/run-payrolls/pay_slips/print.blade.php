@@ -38,7 +38,7 @@
     </style>
 </head>
 
-    <body onload="">
+    <body onload="window.print()">
 
             <div class="invoice-box">
                 <table id="invoice" class="invoice">
