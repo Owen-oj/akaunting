@@ -198,7 +198,8 @@ class PaySlips extends Controller
                 'salary' => $salary,
                 'benefits' => $benefits,
                 'deductions' => $deductions,
-                'total' => $total
+                'total' => $total,
+                'employee_name' => $employee->employee->name
             ],
         ];
 
